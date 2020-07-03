@@ -1,32 +1,29 @@
 {
   "name": "nextjs-test-render-save-cache-redis",
   "version": "1.0.0",
-  "main": "index.ts",
-  "license": "MIT",
   "scripts": {
-    "start": "tsnd --notify=false src/index.ts",
-    "build": "tsc"
+    "dev": "nodemon",
+    "build": "next build && tsc --project tsconfig.server.json",
+    "start": "cross-env NODE_ENV=production node dist/index.js"
   },
   "dependencies": {
+    "cross-env": "^5.2.0",
     "fastify": "^2.15.1",
-    "next": "^9.4.4",
+    "next": "latest",
     "next-server": "^9.0.5",
-    "react": "^16.13.1",
+    "react": "^16.8.4",
     "react-dom": "^16.13.1",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0"
   },
   "devDependencies": {
-    "@types/node": "^14.0.14",
-    "@types/react": "^16.9.41",
+    "@types/node": "^12.0.12",
+    "@types/react": "^16.8.17",
     "@types/react-dom": "^16.9.8",
     "@types/react-router": "^5.1.8",
     "@types/react-router-dom": "^5.1.5",
-    "@types/request": "^2.48.5",
-    "@typescript-eslint/eslint-plugin": "^3.5.0",
-    "@typescript-eslint/parser": "^3.5.0",
-    "eslint": "^7.3.1",
-    "ts-node-dev": "^1.0.0-pre.50",
-    "typescript": "^3.9.5"
+    "nodemon": "^1.19.0",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.5"
   }
 }

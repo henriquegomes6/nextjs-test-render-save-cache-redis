@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
-
+import { StaticRouter } from 'react-router';
 const isServer = typeof window === 'undefined';
 
 export default App => {
-  return class AppWithReactRouter extends React.Component<{ originalUrl: any, context:any}> {
-    static async getInitialProps(appContext) {
+  return class AppWithReactRouter extends React.Component<any, any> {
+    static async getInitialProps(appContext: any) {
       const {
         ctx: {
           req: {
@@ -22,7 +22,6 @@ export default App => {
 
     render() {
       if (isServer) {
-        const { StaticRouter } = require('react-router');
         return (
           <StaticRouter
             location={this.props.originalUrl}
