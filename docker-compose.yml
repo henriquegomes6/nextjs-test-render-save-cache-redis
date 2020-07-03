@@ -1,9 +1,4 @@
 version: "3"
-
-volumes:
-  elastic-data:
-    driver: local
-
 services:
   api:
     build:
@@ -11,4 +6,3 @@ services:
       dockerfile: docker/dev/Dockerfile
     volumes:
       - "./:/src"
-    environment:
